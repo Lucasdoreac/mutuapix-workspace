@@ -1,0 +1,25 @@
+# Submodules (backend and frontend are separate repos)
+backend/
+frontend/
+backend-vps-sync/
+frontend-vps-sync/
+
+# Scripts
+*.sh
+
+# Temporary files
+.DS_Store
+*.html
+
+# Node modules (if any)
+node_modules/
+
+# Security tools
+security/
+
+# Keep documentation and configuration
+!CLAUDE.md
+!README.md
+!*.md
+!.claude/
+!scripts/notify-slack.sh
