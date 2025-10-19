@@ -32,7 +32,9 @@ cd scripts
 
 **After Setup:** Infrastructure 100% operational, ready for production deployment!
 
-**See:** `ROADMAP_COMPLETION_FINAL_REPORT.md` for complete infrastructure audit
+**See:** [docs/infrastructure/ROADMAP_COMPLETION_FINAL_REPORT.md](docs/infrastructure/ROADMAP_COMPLETION_FINAL_REPORT.md) for complete infrastructure audit
+**Journey:** [docs/infrastructure/INFRASTRUCTURE_JOURNEY_COMPLETE.md](docs/infrastructure/INFRASTRUCTURE_JOURNEY_COMPLETE.md) for transformation story
+**Setup:** [docs/infrastructure/SETUP_GUIDES.md](docs/infrastructure/SETUP_GUIDES.md) for external service configuration
 
 ---
 
