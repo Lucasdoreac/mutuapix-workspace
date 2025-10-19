@@ -273,17 +273,29 @@ users.pix_key_type  -- One of: cpf, cnpj, email, phone, random
 2. For other PIX types (CPF, phone, etc.), no matching required
 3. Validation happens in middleware: `app/Http/Middleware/CheckPixKey.php`
 
-**⚠️ CURRENT STATUS:** Validation NOT fully implemented (middleware only checks existence, not email match)
+**✅ CURRENT STATUS:** Validation FULLY IMPLEMENTED (as of 2025-10-19)
 
-**Implementation TODO:**
-- [ ] Add email matching check to `CheckPixKey` middleware
-- [ ] Auto-populate PIX key = email during user registration
-- [ ] Show warning in profile if user changes PIX email to different value
-- [ ] Add test case for email mismatch rejection
+**Implementation COMPLETE:**
+- [x] Email matching check in `CheckPixKey` middleware (returns PIX_EMAIL_MISMATCH error)
+- [x] Auto-populate PIX key = email during user registration (`RegisterController`)
+- [x] Comprehensive test suite (`tests/Feature/PixEmailValidationTest.php` - 6 tests)
+- [ ] Show warning in profile if user changes PIX email to different value (frontend - pending)
+
+**Error Response (email mismatch):**
+```json
+{
+  "success": false,
+  "message": "Sua chave Pix (email) deve ser igual ao email de login. Por favor, atualize sua chave Pix no perfil.",
+  "error_code": "PIX_EMAIL_MISMATCH",
+  "current_email": "user@example.com",
+  "pix_key": "different@example.com"
+}
+```
 
 **Details:** See `.claude/skills/pix-validation/SKILL.md`
 
-**Added:** 2025-10-16
+**Implementation Date:** 2025-10-19
+**Commit:** 5e8873d
 
 ---
 
