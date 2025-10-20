@@ -2,9 +2,23 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**Last Updated:** 2025-10-19
+**Last Updated:** 2025-10-20
 **Location:** `/Users/lucascardoso/Desktop/MUTUA/`
 **Auto-Update Enabled:** ✅ (via Documentation Updater skill)
+
+---
+
+## ⚠️ LEIA PRIMEIRO - Anti-Loop Checklist
+
+**Antes de fazer deploy/rebuild, SEMPRE consultar:**
+📄 [LICOES_APRENDIDAS_ANTI_CIRCULO.md](LICOES_APRENDIDAS_ANTI_CIRCULO.md)
+
+**Problemas que causam loops infinitos:**
+1. ❌ VPS **NÃO é repo git** → Sempre `scp` manual após push
+2. ❌ Cache 1 ano em `next.config.js` → Verificar está em 1 hora
+3. ❌ Múltiplos builds simultâneos → Matar processos anteriores
+4. ❌ Testar em navegador normal → **SEMPRE** modo anônimo primeiro
+5. ❌ Hash igual ≠ cache → Verificar código-fonte no VPS
 
 ---
 
