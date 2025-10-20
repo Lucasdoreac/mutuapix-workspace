@@ -44,6 +44,11 @@ ssh root@49.13.26.142 'pm2 restart mutuapix-api'
 # Deploy Frontend (see warning above!)
 scp src/file.tsx root@138.199.162.115:/var/www/mutuapix-frontend-production/src/
 ssh root@138.199.162.115 'cd /var/www/mutuapix-frontend-production && rm -rf .next && npm run build && pm2 restart mutuapix-frontend'
+
+# MCP Test (ALWAYS incognito!)
+pkill -f "remote-debugging-port=9222" && sleep 2 && \
+open -na "Google Chrome" --args --remote-debugging-port=9222 \
+  --incognito --new-window "https://matrix.mutuapix.com/login"
 ```
 
 ---
@@ -69,6 +74,12 @@ ssh root@138.199.162.115 'cd /var/www/mutuapix-frontend-production && rm -rf .ne
 - Frontend: `src/stores/authStore.ts` (NO `environment` import!), `next.config.js` (cache: 1 hour)
 
 ---
+
+## Skills
+
+- **MCP Testing:** ALWAYS use incognito mode → @.claude/skills/mcp-testing-incognito/SKILL.md
+- **Authentication:** Laravel Sanctum + Next.js → @.claude/skills/authentication-management/SKILL.md
+- **PIX Validation:** Email matching rules → @.claude/skills/pix-validation/SKILL.md
 
 ## More Info
 
